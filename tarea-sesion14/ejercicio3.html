@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #cuadrado {
+            position: absolute;
+            top: 200px;
+            width: 500px;
+            height: 500px;
+            background-color: #a0a0a0;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Un click, cambia de color.</h1>
+    <h1>Doble click, cambia a circulo</h1>
+    <div id="cuadrado"></div>
+    <script>
+
+        function cambiarColor() {
+            cuadrado.style.backgroundColor = fondo();
+        }
+
+
+        function fondo() {
+            const fondo = Math.floor(Math.random() * 16777215).toString(16);
+            cuadrado.style.backgroundColor = "#" + fondo;
+            color.innerHTML = "#" + fondo;
+        }
+        cuadrado.addEventListener("click", cambiarColor);
+
+
+        cuadrado.addEventListener('dblclick', function () {
+            cuadrado.style.borderRadius = "100%";
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #rectangulo {
+            position: absolute;
+            top: 200px;
+        }
+
+        #rectangulo img {
+            width: 500px;
+        }
+
+        ol {
+            margin-top: 340px;
+        }
+
+        ol li {
+            margin: 10px 0;
+        }
+
+        input {
+            margin: 5px 0;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1>Copia la respuesta que creas correcta</h1>
+        <h2>Cual crees que son las coordenadas de la Torre Eiffel?</h2>
+        <div id="rectangulo"><img
+                src="https://www.toureiffel.paris/sites/default/files/styles/1200x675/public/actualite/image_principale/vue_depuisjardins_webbanner_3.jpg?itok=FqfmDgIB"
+                alt=""></div>
+        <ol>
+            <li value="Taj Mahal">27°10′27″N 78°02′32″E</li>
+            <li value="Torre Eiffel">48°51′30″N 2°17′40″E</li>
+            <li value="Cataratas del Niagara">27°59′17″N 86°55′31″E</li>
+        </ol>
+
+        <script>
+            $('li').each(function () {
+                this.oncopy = function () {
+                    if (this.getAttribute("value") === "Torre Eiffel") {
+                        alert("¡Correcto!");
+                    } else {
+                        alert("Incorrecto, prueba de nuevo");
+                    }
+                }
+            })
+        </script>
+
+    </body>
+
+</html>
